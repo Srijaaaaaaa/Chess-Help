@@ -1,94 +1,280 @@
 <!DOCTYPE html>
 
+
+<!--Styling the chess board.[CSS]-->
 <style>
-    .green{
-        background-color: rgb(10, 142, 43);
-        border: none;
+    .chessboardsquares{
+        border: 2px solid #333;
+        display: grid;
+        grid-template-columns: repeat(8,100px);
+        grid-template-rows: repeat(8,100px);
+        width: 800px;
+        color: white;
+    }
+
+    .square{
         height: 100px;
         width: 100px;
+        transition: opacity 100ms ease-in-out;
     }
-    .cream{
-        background-color: rgb(245, 229, 200);
-        border: none;
-        height: 100px;
+
+    .white{
+        background-color: rgb(235,236,208);
+    }
+    .white:hover{
+        background-color: rgb(245, 245, 43);        
+    }
+
+    .black{
+        background-color: rgb(119,149,86);
+    }
+    .black:hover{
+        background-color: rgb(159, 201, 75);
+    }
+
+    
+    .Brook{
         width: 100px;
+        height: 100px;
+        background-image: url(Images/br.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
-    button:active{
-        background-color: rgb(171, 140, 15);
-        transform: translateY(1px);
-        display: block;
+    .Bknight{
+        width: 100px;
+        height: 100px;
+        background-image: url(Images/bn.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
+    .Bbishop{
+        width: 100px;
+        height: 100px;
+        background-image: url(Images/bb.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .Bqueen{
+        width: 100px;
+        height: 100px;
+        background-image: url(Images/bq.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .Bking{
+        width: 100px;
+        height: 100px;
+        background-image: url(Images/bk.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .Bpawn{
+        width: 100px;
+        height: 100px;
+        background-image: url(Images/bp.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+
+    .Wrook{
+        width: 100px;
+        height: 100px;
+        background-image: url(Images/wr.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .Wknight{
+        width: 100px;
+        height: 100px;
+        background-image: url(Images/wn.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .Wbishop{
+        width: 100px;
+        height: 100px;
+        background-image: url(Images/wb.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .Wqueen{
+        width: 100px;
+        height: 100px;
+        background-image: url(Images/wq.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .Wking{
+        width: 100px;
+        height: 100px;
+        background-image: url(Images/wk.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .Wpawn{
+        width: 100px;
+        height: 100px;
+        background-image: url(Images/wp.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
 </style>
 
 
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<br>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<br>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<br>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<br>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<br>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<br>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<br>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
-<button class="green"></button>
-<button class="cream"></button>
+
+
+<!--Using <div> tag for making the chess board.-->
+
+<div class="chessboardsquares">
+    <div class="square white">
+        <div class="Brook"></div>
+    </div>
+    <div class="square black">
+        <div class="Bknight"></div>
+    </div>
+    <div class="square white">
+        <div class="Bbishop"></div>
+    </div>
+    <div class="square black">
+        <div class="Bqueen"></div>
+    </div>
+    <div class="square white">
+        <div class="Bking"></div>
+    </div>
+    <div class="square black">
+        <div class="Bbishop"></div>
+    </div>
+    <div class="square white">
+        <div class="Bknight"></div>
+    </div>
+    <div class="square black">
+        <div class="Brook"></div>
+    </div>
+
+    <div class="square black">
+        <div class="Bpawn"></div>
+    </div> 
+    <div class="square white">
+        <div class="Bpawn"></div>
+    </div>
+    <div class="square black">
+        <div class="Bpawn"></div>   
+    </div>
+    <div class="square white">
+        <div class="Bpawn"></div>
+    </div>
+    <div class="square black">
+        <div class="Bpawn"></div>
+    </div>
+    <div class="square white">
+        <div class="Bpawn"></div>
+    </div>
+    <div class="square black">
+        <div class="Bpawn"></div>
+    </div>
+    <div class="square white">
+        <div class="Bpawn"></div>
+    </div>
+
+    <div class="square white"></div>
+    <div class="square black"></div>
+    <div class="square white"></div>
+    <div class="square black"></div>
+    <div class="square white"></div>
+    <div class="square black"></div>
+    <div class="square white"></div>
+    <div class="square black"></div>
+
+    <div class="square black"></div> 
+    <div class="square white"></div>
+    <div class="square black"></div>
+    <div class="square white"></div>
+    <div class="square black"></div>
+    <div class="square white"></div>
+    <div class="square black"></div>
+    <div class="square white"></div>
+
+    <div class="square white"></div>
+    <div class="square black"></div>
+    <div class="square white"></div>
+    <div class="square black"></div>
+    <div class="square white"></div>
+    <div class="square black"></div>
+    <div class="square white"></div>
+    <div class="square black"></div>
+
+    <div class="square black"></div> 
+    <div class="square white"></div>
+    <div class="square black"></div>
+    <div class="square white"></div>
+    <div class="square black"></div>
+    <div class="square white"></div>
+    <div class="square black"></div>
+    <div class="square white"></div>
+
+    <div class="square white">
+        <div class="Wpawn"></div>
+    </div>
+    <div class="square black">
+        <div class="Wpawn"></div>
+    </div>
+    <div class="square white">
+        <div class="Wpawn"></div>
+    </div>
+    <div class="square black">
+        <div class="Wpawn"></div>
+    </div>
+    <div class="square white">
+        <div class="Wpawn"></div>
+    </div>
+    <div class="square black">
+        <div class="Wpawn"></div>
+    </div>
+    <div class="square white">
+        <div class="Wpawn"></div>
+    </div>
+    <div class="square black">
+        <div class="Wpawn"></div>
+    </div>
+
+    <div class="square black">
+        <div class="Wrook"></div>
+    </div> 
+    <div class="square white">
+        <div class="Wknight"></div>
+    </div>
+    <div class="square black">
+        <div class="Wbishop"></div>
+    </div>
+    <div class="square white">
+        <div class="Wqueen"></div>
+    </div>
+    <div class="square black">
+        <div class="Wking"></div>
+    </div>
+    <div class="square white">
+        <div class="Wbishop"></div>
+    </div>
+    <div class="square black">
+        <div class="Wknight"></div>
+    </div>
+    <div class="square white">
+        <div class="Wrook"></div>
+    </div>
+  
+</div>
+
