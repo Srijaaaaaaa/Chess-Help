@@ -1,280 +1,156 @@
 <!DOCTYPE html>
 
+<html>
+    <head>
+        <title>Chess Help</title>
+        <link rel="stylesheet" href="Board.css">
+    </head>
 
-<!--Styling the chess board.[CSS]-->
-<style>
-    .chessboardsquares{
-        border: 2px solid #333;
-        display: grid;
-        grid-template-columns: repeat(8,100px);
-        grid-template-rows: repeat(8,100px);
-        width: 800px;
-        color: white;
-    }
+    <body>
+        <!--Using <div> tag for making the chess board.-->
+        <div class="chessboardsquares">
 
-    .square{
-        height: 100px;
-        width: 100px;
-        transition: opacity 100ms ease-in-out;
-    }
+            <div class="square white">
+                <div class="Brook"></div>
+            </div>
+            <div class="square black">
+                <div class="Bknight"></div>
+            </div>
+            <div class="square white">
+                <div class="Bbishop"></div>
+            </div>
+            <div class="square black">
+                <div class="Bqueen"></div>
+            </div>
+            <div class="square white">
+                <div class="Bking"></div>
+            </div>
+            <div class="square black">
+                <div class="Bbishop"></div>
+            </div>
+            <div class="square white">
+                <div class="Bknight"></div>
+            </div>
+            <div class="square black">
+                <div class="Brook"></div>
+            </div>
 
-    .white{
-        background-color: rgb(235,236,208);
-    }
-    .white:hover{
-        background-color: rgb(245, 245, 43);        
-    }
+            <div class="square black">
+                <div class="Bpawn"></div>
+            </div> 
+            <div class="square white">
+                <div class="Bpawn"></div>
+            </div>
+            <div class="square black">
+                <div class="Bpawn"></div>   
+            </div>
+            <div class="square white">
+                <div class="Bpawn"></div>
+            </div>
+            <div class="square black">
+                <div class="Bpawn"></div>
+            </div>
+            <div class="square white">
+                <div class="Bpawn"></div>
+            </div>
+            <div class="square black">
+                <div class="Bpawn"></div>
+            </div>
+            <div class="square white">
+                <div class="Bpawn"></div>
+            </div>
 
-    .black{
-        background-color: rgb(119,149,86);
-    }
-    .black:hover{
-        background-color: rgb(159, 201, 75);
-    }
+            <div class="square white"></div>
+            <div class="square black"></div>
+            <div class="square white"></div>
+            <div class="square black"></div>
+            <div class="square white"></div>
+            <div class="square black"></div>
+            <div class="square white"></div>
+            <div class="square black"></div>
 
-    
-    .Brook{
-        width: 100px;
-        height: 100px;
-        background-image: url(Images/br.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .Bknight{
-        width: 100px;
-        height: 100px;
-        background-image: url(Images/bn.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .Bbishop{
-        width: 100px;
-        height: 100px;
-        background-image: url(Images/bb.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .Bqueen{
-        width: 100px;
-        height: 100px;
-        background-image: url(Images/bq.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .Bking{
-        width: 100px;
-        height: 100px;
-        background-image: url(Images/bk.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .Bpawn{
-        width: 100px;
-        height: 100px;
-        background-image: url(Images/bp.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+            <div class="square black"></div> 
+            <div class="square white"></div>
+            <div class="square black"></div>
+            <div class="square white"></div>
+            <div class="square black"></div>
+            <div class="square white"></div>
+            <div class="square black"></div>
+            <div class="square white"></div>
 
+            <div class="square white"></div>
+            <div class="square black"></div>
+            <div class="square white"></div>
+            <div class="square black"></div>
+            <div class="square white"></div>
+            <div class="square black"></div>
+            <div class="square white"></div>
+            <div class="square black"></div>
 
-    .Wrook{
-        width: 100px;
-        height: 100px;
-        background-image: url(Images/wr.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .Wknight{
-        width: 100px;
-        height: 100px;
-        background-image: url(Images/wn.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .Wbishop{
-        width: 100px;
-        height: 100px;
-        background-image: url(Images/wb.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .Wqueen{
-        width: 100px;
-        height: 100px;
-        background-image: url(Images/wq.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .Wking{
-        width: 100px;
-        height: 100px;
-        background-image: url(Images/wk.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .Wpawn{
-        width: 100px;
-        height: 100px;
-        background-image: url(Images/wp.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+            <div class="square black"></div> 
+            <div class="square white"></div>
+            <div class="square black"></div>
+            <div class="square white"></div>
+            <div class="square black"></div>
+            <div class="square white"></div>
+            <div class="square black"></div>
+            <div class="square white"></div>
 
-</style>
+            <div class="square white">
+                <div class="Wpawn"></div>
+            </div>
+            <div class="square black">
+                <div class="Wpawn"></div>
+            </div>
+            <div class="square white">
+                <div class="Wpawn"></div>
+            </div>
+            <div class="square black">
+                <div class="Wpawn"></div>
+            </div>
+            <div class="square white">
+                <div class="Wpawn"></div>
+            </div>
+            <div class="square black">
+                <div class="Wpawn"></div>
+            </div>
+            <div class="square white">
+                <div class="Wpawn"></div>
+            </div>
+            <div class="square black">
+                <div class="Wpawn"></div>
+            </div>
 
+            <div class="square black">
+                <div class="Wrook"></div>
+            </div> 
+            <div class="square white">
+                <div class="Wknight"></div>
+            </div>
+            <div class="square black">
+                <div class="Wbishop"></div>
+            </div>
+            <div class="square white">
+                <div class="Wqueen"></div>
+            </div>
+            <div class="square black">
+                <div class="Wking"></div>
+            </div>
+            <div class="square white">
+                <div class="Wbishop"></div>
+            </div>
+            <div class="square black">
+                <div class="Wknight"></div>
+            </div>
+            <div class="square white">
+                <div class="Wrook"></div>
+            </div>
+        </div>   
+        <script src="Movement.js"></script>     
+    </body>
 
+</html>
 
 
-<!--Using <div> tag for making the chess board.-->
 
-<div class="chessboardsquares">
-    <div class="square white">
-        <div class="Brook"></div>
-    </div>
-    <div class="square black">
-        <div class="Bknight"></div>
-    </div>
-    <div class="square white">
-        <div class="Bbishop"></div>
-    </div>
-    <div class="square black">
-        <div class="Bqueen"></div>
-    </div>
-    <div class="square white">
-        <div class="Bking"></div>
-    </div>
-    <div class="square black">
-        <div class="Bbishop"></div>
-    </div>
-    <div class="square white">
-        <div class="Bknight"></div>
-    </div>
-    <div class="square black">
-        <div class="Brook"></div>
-    </div>
-
-    <div class="square black">
-        <div class="Bpawn"></div>
-    </div> 
-    <div class="square white">
-        <div class="Bpawn"></div>
-    </div>
-    <div class="square black">
-        <div class="Bpawn"></div>   
-    </div>
-    <div class="square white">
-        <div class="Bpawn"></div>
-    </div>
-    <div class="square black">
-        <div class="Bpawn"></div>
-    </div>
-    <div class="square white">
-        <div class="Bpawn"></div>
-    </div>
-    <div class="square black">
-        <div class="Bpawn"></div>
-    </div>
-    <div class="square white">
-        <div class="Bpawn"></div>
-    </div>
-
-    <div class="square white"></div>
-    <div class="square black"></div>
-    <div class="square white"></div>
-    <div class="square black"></div>
-    <div class="square white"></div>
-    <div class="square black"></div>
-    <div class="square white"></div>
-    <div class="square black"></div>
-
-    <div class="square black"></div> 
-    <div class="square white"></div>
-    <div class="square black"></div>
-    <div class="square white"></div>
-    <div class="square black"></div>
-    <div class="square white"></div>
-    <div class="square black"></div>
-    <div class="square white"></div>
-
-    <div class="square white"></div>
-    <div class="square black"></div>
-    <div class="square white"></div>
-    <div class="square black"></div>
-    <div class="square white"></div>
-    <div class="square black"></div>
-    <div class="square white"></div>
-    <div class="square black"></div>
-
-    <div class="square black"></div> 
-    <div class="square white"></div>
-    <div class="square black"></div>
-    <div class="square white"></div>
-    <div class="square black"></div>
-    <div class="square white"></div>
-    <div class="square black"></div>
-    <div class="square white"></div>
-
-    <div class="square white">
-        <div class="Wpawn"></div>
-    </div>
-    <div class="square black">
-        <div class="Wpawn"></div>
-    </div>
-    <div class="square white">
-        <div class="Wpawn"></div>
-    </div>
-    <div class="square black">
-        <div class="Wpawn"></div>
-    </div>
-    <div class="square white">
-        <div class="Wpawn"></div>
-    </div>
-    <div class="square black">
-        <div class="Wpawn"></div>
-    </div>
-    <div class="square white">
-        <div class="Wpawn"></div>
-    </div>
-    <div class="square black">
-        <div class="Wpawn"></div>
-    </div>
-
-    <div class="square black">
-        <div class="Wrook"></div>
-    </div> 
-    <div class="square white">
-        <div class="Wknight"></div>
-    </div>
-    <div class="square black">
-        <div class="Wbishop"></div>
-    </div>
-    <div class="square white">
-        <div class="Wqueen"></div>
-    </div>
-    <div class="square black">
-        <div class="Wking"></div>
-    </div>
-    <div class="square white">
-        <div class="Wbishop"></div>
-    </div>
-    <div class="square black">
-        <div class="Wknight"></div>
-    </div>
-    <div class="square white">
-        <div class="Wrook"></div>
-    </div>
-  
-</div>
 
